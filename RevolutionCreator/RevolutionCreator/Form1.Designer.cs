@@ -40,7 +40,7 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_fieldmap = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label_field = new System.Windows.Forms.Label();
             this.comboBox_fields = new System.Windows.Forms.ComboBox();
@@ -57,7 +57,7 @@
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fieldmap)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
@@ -152,7 +152,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pictureBox_fieldmap);
             this.groupBox1.Location = new System.Drawing.Point(13, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(510, 520);
@@ -160,13 +160,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Field Map";
             // 
-            // pictureBox1
+            // pictureBox_fieldmap
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(5, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox_fieldmap.Location = new System.Drawing.Point(5, 15);
+            this.pictureBox_fieldmap.Name = "pictureBox_fieldmap";
+            this.pictureBox_fieldmap.Size = new System.Drawing.Size(500, 500);
+            this.pictureBox_fieldmap.TabIndex = 0;
+            this.pictureBox_fieldmap.TabStop = false;
             // 
             // groupBox2
             // 
@@ -195,6 +195,7 @@
             this.comboBox_fields.Name = "comboBox_fields";
             this.comboBox_fields.Size = new System.Drawing.Size(228, 21);
             this.comboBox_fields.TabIndex = 0;
+            this.comboBox_fields.SelectedIndexChanged += new System.EventHandler(this.comboBox_fields_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -320,7 +321,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fieldmap)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -355,7 +356,7 @@
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.Label label_pcIP;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox_fieldmap;
         private System.Windows.Forms.Label label_field;
         private System.Windows.Forms.ComboBox comboBox_fields;
     }

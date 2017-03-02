@@ -19,21 +19,17 @@ namespace RevolutionCreator
             public Image FieldImage { get; set; }
             public string FieldName { get; set; }
 
-            public FTCField(string _name, string imagePath)
-            {
-                FieldImage = Image.FromFile(Directory.GetCurrentDirectory() + "/Fields/" + imagePath);
-                FieldName = _name;
-            }
-
-
+            public FTCField(string _name, Image image){ FieldImage = image; FieldName = _name; }
         }
-
+            
         private BindingList<FTCField> FTCFields = new BindingList<FTCField>();
+        private FTCField CurrentField;
         
 
         public Form1()
         {
-            FTCFields.Add(new FTCField("FTC Velocity Vortex (2016-2017)", "VelocityVortex.png"));
+            FTCFields.Add(new FTCField("FTC Velocity Vortex (2016-2017)", RevolutionCreator.Properties.Resources.VelocityVortex));
+            FTCFields.Add(new FTCField("FTC Blank Field", RevolutionCreator.Properties.Resources.BlankFieldFTC));
 
             InitializeComponent();
 
@@ -44,6 +40,11 @@ namespace RevolutionCreator
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        public void UpdateFieldMap()
+        {
+            pictureBox_fieldmap.Image = CurrentField.FieldImage;
         }
 
         public void UpdateFieldSettings()
@@ -63,6 +64,24 @@ namespace RevolutionCreator
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        //
+        //
+        // EVENTS
+        //
+        //
+
+
+        private void comboBox_fields_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_fields.SelectedValue != null)
+            {
+                CurrentField = (FTCField)comboBox_fields.SelectedItem;
+                UpdateFieldMap();
+            }
         }
     }
 }
