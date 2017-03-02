@@ -40,8 +40,11 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_fieldname = new System.Windows.Forms.Label();
             this.pictureBox_fieldmap = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown_fieldSize = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             this.label_field = new System.Windows.Forms.Label();
             this.comboBox_fields = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -59,6 +62,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fieldmap)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_fieldSize)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,6 +156,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label_fieldname);
             this.groupBox1.Controls.Add(this.pictureBox_fieldmap);
             this.groupBox1.Location = new System.Drawing.Point(13, 29);
             this.groupBox1.Name = "groupBox1";
@@ -159,6 +164,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Field Map";
+            // 
+            // label_fieldname
+            // 
+            this.label_fieldname.AutoSize = true;
+            this.label_fieldname.Location = new System.Drawing.Point(7, 16);
+            this.label_fieldname.Name = "label_fieldname";
+            this.label_fieldname.Size = new System.Drawing.Size(80, 13);
+            this.label_fieldname.TabIndex = 1;
+            this.label_fieldname.Text = "label_fieldname";
             // 
             // pictureBox_fieldmap
             // 
@@ -170,6 +184,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.numericUpDown_fieldSize);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label_field);
             this.groupBox2.Controls.Add(this.comboBox_fields);
             this.groupBox2.Location = new System.Drawing.Point(13, 550);
@@ -178,6 +194,29 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Field Settings";
+            // 
+            // numericUpDown_fieldSize
+            // 
+            this.numericUpDown_fieldSize.DecimalPlaces = 2;
+            this.numericUpDown_fieldSize.Location = new System.Drawing.Point(97, 55);
+            this.numericUpDown_fieldSize.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown_fieldSize.Name = "numericUpDown_fieldSize";
+            this.numericUpDown_fieldSize.Size = new System.Drawing.Size(178, 20);
+            this.numericUpDown_fieldSize.TabIndex = 3;
+            this.numericUpDown_fieldSize.ValueChanged += new System.EventHandler(this.numericUpDown_fieldSize_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Field Width (CM)";
             // 
             // label_field
             // 
@@ -321,9 +360,11 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fieldmap)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_fieldSize)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
@@ -359,6 +400,9 @@
         private System.Windows.Forms.PictureBox pictureBox_fieldmap;
         private System.Windows.Forms.Label label_field;
         private System.Windows.Forms.ComboBox comboBox_fields;
+        private System.Windows.Forms.Label label_fieldname;
+        private System.Windows.Forms.NumericUpDown numericUpDown_fieldSize;
+        private System.Windows.Forms.Label label3;
     }
 }
 

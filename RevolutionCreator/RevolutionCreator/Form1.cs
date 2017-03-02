@@ -13,7 +13,9 @@ namespace RevolutionCreator
 {
     public partial class Form1 : Form
     {
-
+        //
+        // Field Data
+        //
         private class FTCField
         {
             public Image FieldImage { get; set; }
@@ -28,6 +30,7 @@ namespace RevolutionCreator
 
         public Form1()
         {
+            //Add Fields
             FTCFields.Add(new FTCField("FTC Velocity Vortex (2016-2017)", RevolutionCreator.Properties.Resources.VelocityVortex));
             FTCFields.Add(new FTCField("FTC Blank Field", RevolutionCreator.Properties.Resources.BlankFieldFTC));
 
@@ -45,19 +48,23 @@ namespace RevolutionCreator
         public void UpdateFieldMap()
         {
             pictureBox_fieldmap.Image = CurrentField.FieldImage;
+            label_fieldname.Text = CurrentField.FieldName;
         }
 
         public void UpdateFieldSettings()
         {
             //Add Field Dropdown Options
-
             comboBox_fields.ValueMember = "FieldName";
             comboBox_fields.DisplayMember = "FieldName";
             comboBox_fields.DataSource = FTCFields;
+
+            //Update FieldSize Control based on Auto Data
+            numericUpDown_fieldSize.Value = (decimal)AutoData.FieldSize;
         }
 
         public void UpdateConnectionStatus()
         {
+            //Update Local IP Label
             label_pcIP.Text = "Local IP: " + ConnectionFunctions.GetLocalIP();
         }
 
@@ -82,6 +89,12 @@ namespace RevolutionCreator
                 CurrentField = (FTCField)comboBox_fields.SelectedItem;
                 UpdateFieldMap();
             }
+        }
+
+        private void numericUpDown_fieldSize_ValueChanged(object sender, EventArgs e)
+        {
+            AutoData.FieldSize = (double)numericUpDown_fieldSize.Value;
+            UpdateFieldSettings();
         }
     }
 }
