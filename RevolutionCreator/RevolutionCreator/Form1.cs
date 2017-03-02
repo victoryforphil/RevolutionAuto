@@ -96,5 +96,10 @@ namespace RevolutionCreator
             AutoData.FieldSize = (double)numericUpDown_fieldSize.Value;
             UpdateFieldSettings();
         }
+
+        private void toolStripButton_save_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(AutoFileManager.ConvertToJSON());
+        }
     }
 }
