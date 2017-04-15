@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoConsts.cs" />
     <Compile Include="AutoData.cs" />
     <Compile Include="AutoFileManager.cs" />
     <Compile Include="ConnectionFunctions.cs" />

@@ -10,9 +10,11 @@ namespace RevolutionCreator
     
     public class AutoData
     {
+        //
+        // JSON DATA
+        //
         [JsonProperty]
         public static double FieldSize = 365.75;
-
 
 
 

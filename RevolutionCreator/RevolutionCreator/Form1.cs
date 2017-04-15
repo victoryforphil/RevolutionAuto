@@ -36,10 +36,16 @@ namespace RevolutionCreator
 
             InitializeComponent();
 
-            UpdateFieldSettings();
-            UpdateConnectionStatus();
+           
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            UpdateFieldSettings();
+            UpdateConnectionStatus();
+            UpdateHardware();
+
+        }
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -68,10 +74,11 @@ namespace RevolutionCreator
             label_pcIP.Text = "Local IP: " + ConnectionFunctions.GetLocalIP();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void UpdateHardware()
         {
-
+            comboBox_hardwareType.Items.AddRange(AutoConsts.HARDWARE_ALL);
         }
+
 
 
 
@@ -100,6 +107,11 @@ namespace RevolutionCreator
         private void toolStripButton_save_Click(object sender, EventArgs e)
         {
             MessageBox.Show(AutoFileManager.ConvertToJSON());
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
