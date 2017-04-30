@@ -76,7 +76,26 @@ namespace RevolutionCreator
 
         public void UpdateHardware()
         {
+            //Add all hardware types to ComboBox and Selected First item as default;
             comboBox_hardwareType.Items.AddRange(AutoConsts.HARDWARE_ALL);
+            comboBox_hardwareType.SelectedIndex = 0;
+
+            for(int i=0; i<AutoData.HardwareItems.Count;i++)
+            {
+                HardwareItem _item = AutoData.HardwareItems[i];
+
+                Label lbName = new Label();
+                lbName.Text = _item.HardwareName;
+                lbName.Location = new Point(10, i * 30);
+                lbName.Width = 50;
+                panel_currentHardware.Controls.Add(lbName);
+
+                Label lbType = new Label();
+                lbType.Text = _item.HardwareType;
+                lbType.Location = new Point(10 + lbName.Location.X + lbName.Width, i * 30);
+            
+                panel_currentHardware.Controls.Add(lbType);
+            }
         }
 
 
@@ -112,6 +131,21 @@ namespace RevolutionCreator
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_hardwareAdd_Click(object sender, EventArgs e)
+        {
+            if(textBox_hardware_Name.Text == "")
+            {
+                MessageBox.Show("Please Enter a Hardware Name! (This should be the same as the text in your robot configuration)");
+                return;
+            }
+
+            HardwareItem newItem = new HardwareItem();
+            newItem.HardwareName = textBox_hardware_Name.Text;
+            newItem.HardwareType = comboBox_hardwareType.Text;
+            AutoData.HardwareItems.Add(newItem);
+            UpdateHardware();
         }
     }
 }

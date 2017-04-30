@@ -68,8 +68,8 @@
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.panel_currentHardware = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.textBox_hardware_Name = new System.Windows.Forms.TextBox();
+            this.button_hardwareAdd = new System.Windows.Forms.Button();
             this.comboBox_hardwareType = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -432,8 +432,8 @@
             // 
             this.groupBox11.Controls.Add(this.panel_currentHardware);
             this.groupBox11.Controls.Add(this.label6);
-            this.groupBox11.Controls.Add(this.textBox1);
-            this.groupBox11.Controls.Add(this.button5);
+            this.groupBox11.Controls.Add(this.textBox_hardware_Name);
+            this.groupBox11.Controls.Add(this.button_hardwareAdd);
             this.groupBox11.Controls.Add(this.comboBox_hardwareType);
             this.groupBox11.Location = new System.Drawing.Point(1018, 293);
             this.groupBox11.Name = "groupBox11";
@@ -459,21 +459,22 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Name";
             // 
-            // textBox1
+            // textBox_hardware_Name
             // 
-            this.textBox1.Location = new System.Drawing.Point(47, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox_hardware_Name.Location = new System.Drawing.Point(47, 20);
+            this.textBox_hardware_Name.Name = "textBox_hardware_Name";
+            this.textBox_hardware_Name.Size = new System.Drawing.Size(184, 20);
+            this.textBox_hardware_Name.TabIndex = 2;
             // 
-            // button5
+            // button_hardwareAdd
             // 
-            this.button5.Location = new System.Drawing.Point(187, 45);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(44, 23);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Add";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button_hardwareAdd.Location = new System.Drawing.Point(187, 45);
+            this.button_hardwareAdd.Name = "button_hardwareAdd";
+            this.button_hardwareAdd.Size = new System.Drawing.Size(44, 23);
+            this.button_hardwareAdd.TabIndex = 1;
+            this.button_hardwareAdd.Text = "Add";
+            this.button_hardwareAdd.UseVisualStyleBackColor = true;
+            this.button_hardwareAdd.Click += new System.EventHandler(this.button_hardwareAdd_Click);
             // 
             // comboBox_hardwareType
             // 
@@ -562,8 +563,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox_hardware_Name;
+        private System.Windows.Forms.Button button_hardwareAdd;
         private System.Windows.Forms.ComboBox comboBox_hardwareType;
         private System.Windows.Forms.Panel panel_currentHardware;
     }
