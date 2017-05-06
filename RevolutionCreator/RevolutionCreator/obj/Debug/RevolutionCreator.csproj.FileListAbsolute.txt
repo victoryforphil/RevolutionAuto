@@ -19,3 +19,14 @@ E:\Programs\RevolutionAuto\RevolutionCreator\RevolutionCreator\obj\Debug\Revolut
 E:\Programs\RevolutionAuto\RevolutionCreator\RevolutionCreator\bin\Debug\Newtonsoft.Json.dll
 E:\Programs\RevolutionAuto\RevolutionCreator\RevolutionCreator\bin\Debug\Newtonsoft.Json.pdb
 E:\Programs\RevolutionAuto\RevolutionCreator\RevolutionCreator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\bin\Debug\RevolutionCreator.exe.config
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\bin\Debug\RevolutionCreator.exe
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\bin\Debug\RevolutionCreator.pdb
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\obj\Debug\RevolutionCreator.csprojResolveAssemblyReference.cache
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\obj\Debug\RevolutionCreator.Form1.resources
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\obj\Debug\RevolutionCreator.Properties.Resources.resources
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\obj\Debug\RevolutionCreator.csproj.GenerateResource.Cache
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\obj\Debug\RevolutionCreator.exe
+C:\Users\Victo\Documents\Projects\RevolutionAuto\RevolutionCreator\RevolutionCreator\obj\Debug\RevolutionCreator.pdb
