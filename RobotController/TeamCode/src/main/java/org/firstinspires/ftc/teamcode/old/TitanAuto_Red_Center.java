@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.old;
 
 import android.media.MediaPlayer;
 
@@ -9,6 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import org.firstinspires.ftc.teamcode.R;
 import org.lasarobotics.vision.android.Cameras;
 import org.lasarobotics.vision.ftc.resq.Beacon;
 import org.lasarobotics.vision.opmode.LinearVisionOpMode;
@@ -19,8 +20,8 @@ import org.opencv.core.Size;
 /**
  * Created by Titan Apex on 2/20/2017.
  */
-@Autonomous(name="Titan Backup | Blue Center", group="Backup")
-public class TitanAuto_Blue_Center extends LinearVisionOpMode {
+@Autonomous(name="Titan Backup | Red Center", group="Concept")
+public class TitanAuto_Red_Center extends LinearVisionOpMode {
     private ElapsedTime runtime = new ElapsedTime();
     private DcMotor frontLeft = null;
     private DcMotor frontRight = null;
@@ -107,20 +108,20 @@ public class TitanAuto_Blue_Center extends LinearVisionOpMode {
             rearLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             rearRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-            RunMotor(frontLeft, -9800, 1);
-            RunMotor(rearRight, 9800,1);
+            RunMotor(frontRight, 7200, 1);
+            RunMotor(rearLeft, -7200,1);
 
-            while(opModeIsActive() && (frontLeft.isBusy() && rearRight.isBusy())){
+            while(opModeIsActive() && (rearLeft.isBusy() && frontRight.isBusy())){
                 telemetry.addData("Encoder: ",frontLeft.getCurrentPosition() + "/"+rearRight.getCurrentPosition());
                 telemetry.update();
             }
 
-            Turn(90, 0.4);
+            Turn(270, 0.4);
 
 
             WaitTilTime(1);
             boolean rightBlue = false;
-            rightBlue = beacon.getAnalysis().isRightBlue();
+            rightBlue = beacon.getAnalysis().isRightRed();
 
             if(rightBlue){
                 RunMotor(frontLeft,  -1000, 0.3);
@@ -131,15 +132,15 @@ public class TitanAuto_Blue_Center extends LinearVisionOpMode {
                     telemetry.addData("Encoder: ",frontLeft.getCurrentPosition() + "/"+rearRight.getCurrentPosition());
                     telemetry.update();
                 }
-                Turn(90, 0.5);
+                Turn(270, 0.5);
             }
 
             media_pacmac_start.stop();
             media_backup.start();
-            RunMotor(frontLeft, -2300, 0.4);
-            RunMotor(frontRight, 2300, 0.4);
-            RunMotor(rearRight, 2300,0.4);
-            RunMotor(rearLeft, -2300,0.4);
+            RunMotor(frontLeft, -2000, 0.4);
+            RunMotor(frontRight, 2000, 0.4);
+            RunMotor(rearRight, 2000,0.4);
+            RunMotor(rearLeft, -2000,0.4);
 
             while(opModeIsActive() && (rearRight.isBusy() && rearLeft.isBusy() && frontRight.isBusy() && rearRight.isBusy())){
                 telemetry.addData("Encoder: ",frontLeft.getCurrentPosition() + "/"+rearRight.getCurrentPosition());
@@ -147,10 +148,10 @@ public class TitanAuto_Blue_Center extends LinearVisionOpMode {
             }
 
 
-            RunMotor(frontLeft, 2300, 0.7);
-            RunMotor(frontRight, -2300, 0.7);
-            RunMotor(rearRight, -2300,0.7);
-            RunMotor(rearLeft, 2300,0.7);
+            RunMotor(frontLeft, 2000, 0.7);
+            RunMotor(frontRight, -2000, 0.7);
+            RunMotor(rearRight, -2000,0.7);
+            RunMotor(rearLeft, 2000,0.7);
 
             while(opModeIsActive() && (rearRight.isBusy() && rearLeft.isBusy() && frontRight.isBusy() && rearRight.isBusy())){
                 telemetry.addData("Encoder: ",frontLeft.getCurrentPosition() + "/"+rearRight.getCurrentPosition());
@@ -172,7 +173,7 @@ public class TitanAuto_Blue_Center extends LinearVisionOpMode {
 
             }
 
-            Turn(50, 0.3);
+            Turn(310, 0.3);
 
 
 
@@ -183,7 +184,7 @@ public class TitanAuto_Blue_Center extends LinearVisionOpMode {
                 telemetry.update();
             };
 
-            Turn(90, 0.4);
+            Turn(270, 0.4);
 
             WaitTilTime(1);
 
@@ -200,7 +201,7 @@ public class TitanAuto_Blue_Center extends LinearVisionOpMode {
                     telemetry.update();
                 }
 
-                Turn(90, 0.4);
+                Turn(270, 0.4);
 
             }
 
@@ -239,7 +240,7 @@ public class TitanAuto_Blue_Center extends LinearVisionOpMode {
 
             }
 
-            Turn(150, 0.5);
+            Turn(300, 0.5);
 
 
             RunMotor(frontLeft, -6800, 1);

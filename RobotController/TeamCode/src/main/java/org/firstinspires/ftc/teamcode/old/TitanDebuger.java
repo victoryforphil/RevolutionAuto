@@ -30,7 +30,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
 TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.old;
 
 import android.media.MediaPlayer;
 
@@ -40,51 +40,68 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
 
 @TeleOp(name="Titan Debugger", group="Iterative Opmode")  // @Autonomous(...) is the other common choice
 
-public class UltraRader extends OpMode
+public class TitanDebuger extends OpMode
 {
     /* Declare OpMode members. */
     private ElapsedTime runtime = new ElapsedTime();
-    private TitanDebuger Logger = new TitanDebuger();
-    private Servo RadarServo = null;
-    private UltrasonicSensor Ultra0   = null;
-    private UltrasonicSensor Ultra90  = null;
-    private UltrasonicSensor Ultra180 = null;
-    private UltrasonicSensor Ultra270 = null;
+    private DcMotor frontLeft = null;
+    private DcMotor frontRight = null;
+    private DcMotor rearLeft = null;
+    private DcMotor rearRight = null;
 
-    private double RadarRotiation;
+    private DcMotor leftLift = null;
+    private DcMotor rightLift = null;
 
-    HashMap<Double, Double> Ultra0Values = new HashMap<>();
-    HashMap<Double, Double> Ultra90Values = new HashMap<>();
-    HashMap<Double, Double> Ultra180Values = new HashMap<>();
-    HashMap<Double, Double> Ultra270Values = new HashMap<>();
+    private DcMotor leftGrab = null;
+    private DcMotor rightGrab = null;
 
     /*
      * Code to run ONCE when the driver hits INIT
      */
-
     @Override
     public void init() {
         telemetry.addData("Status", "Initialized");
 
 
-        RadarServo = hardwareMap.servo.get("Servo");
-        Ultra0 = hardwareMap.ultrasonicSensor.get("Ultra0");
-        Ultra90 = hardwareMap.ultrasonicSensor.get("Ultra0");
-        Ultra180 = hardwareMap.ultrasonicSensor.get("Ultra18");
-        Ultra270 = hardwareMap.ultrasonicSensor.get("Ultra270");
+        frontLeft  = hardwareMap.dcMotor.get("FrontLeft");
+        frontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        frontRight = hardwareMap.dcMotor.get("FrontRight");
+
+        frontRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        frontLeft.setDirection(DcMotorSimple.Direction.REVERSE );
+
+
+        rearLeft   = hardwareMap.dcMotor.get("RearLeft");
+        rearLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        rearRight  = hardwareMap.dcMotor.get("RearRight");
+        rearRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        rearLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        leftLift   = hardwareMap.dcMotor.get("LeftLift");
+        rightLift  = hardwareMap.dcMotor.get("RightLift");
+
+        rightLift.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        leftGrab   = hardwareMap.dcMotor.get("LeftGrab");
+        rightGrab  = hardwareMap.dcMotor.get("RightGrab");
+
+        rightGrab.setDirection(DcMotorSimple.Direction.REVERSE);
+
+
 
 
     }
@@ -110,6 +127,28 @@ public class UltraRader extends OpMode
      */
     @Override
     public void loop() {
+        telemetry.addData("FrontLeft", frontLeft.getCurrentPosition());
+        telemetry.addData("frontRight", frontRight.getCurrentPosition());
+        telemetry.addData("rearRight", rearRight.getCurrentPosition());
+        telemetry.addData("rearLeft", rearLeft.getCurrentPosition());
+        if(gamepad1.a){
+            frontLeft.setPower(1);
+        }
+
+
+        if(gamepad1.b){
+            frontRight.setPower(1);
+        }
+
+        if(gamepad1.x){
+            rearLeft.setPower(1);
+        }
+
+        if(gamepad1.y){
+            rearRight.setPower(1);
+        }
+
+        telemetry.update();
 
 
     }
